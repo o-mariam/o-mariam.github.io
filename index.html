@@ -1,108 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mariam | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimitris Kontzedakis - Portfolio</title>
 
+    <!-- Add your custom CSS styles here -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Add any external CSS libraries or fonts if needed -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f9f9fb;
-      color: #333;
-      padding: 2rem;
-    }
-
-    header {
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      margin-bottom: 3rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      color: #111;
-    }
-
-    p.subtitle {
-      color: #666;
-      font-size: 1.2rem;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .project {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .project h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project p {
-      margin-bottom: 1rem;
-      color: #555;
-    }
-
-    .project a {
-      text-decoration: none;
-      color: #0070f3;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 4rem;
-      color: #aaa;
-      font-size: 0.9rem;
+    section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mariam</h1>
-    <p class="subtitle">Frontend Developer & Open Source Enthusiast</p>
-  </header>
 
-  <section class="projects">
-    <div class="project">
-      <h2>My Cool Project</h2>
-      <p>This is a short description of what the project does, built with HTML/CSS/JS.</p>
-      <a href="https://github.com/o-mariam/my-cool-project" target="_blank">View on GitHub →</a>
+<!-- Header Section -->
+<header class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+        <h1 class="display-4">Dimitris Kontzedakis</h1>
+        <p class="lead">Machine Learning Engineer | Data Scientist</p>
+        <p>London, UK</p>
+        <p>dkontzedakis@gmail.com • +44 7729971360 • <a href="https://www.linkedin.com/in/dimitris-kontzedakis/">LinkedIn</a>
+            • <a href="https://github.com/jimkon">GitHub</a></p>
+        <!-- Add a brief introduction or tagline -->
     </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><u>About me</u></a>
+        <a class="navbar-brand" href="projects.html"><u>Projects</u></a>
+<!--        <a class="navbar-brand" href="cv/CV.html"><u>CV</u></a>-->
 
-    <div class="project">
-      <h2>Another App</h2>
-      <p>A powerful tool that solves a specific problem. Uses Node.js and Express.</p>
-      <a href="https://github.com/o-mariam/another-app" target="_blank">View on GitHub →</a>
-    </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>
 
-    <!-- Add more projects here -->
+
+<div>
+    <h2>About</h2>
+    <section>
+    <p>
+      Hi, I'm Dimitris, a passionate engineer with experience in AI and Machine Learning. I've worked as a Data Scientist and Machine Learning Engineer, assisting companies in designing, developing, and productionizing AI solutions. I'm a strong advocate for well-designed code, following best practices, and delivering professional results.
+    </p>
+        <br>
+
+    <p>
+      In my roles, I've focused on simplifying complex AI concepts, ensuring code quality, and fostering a collaborative development environment. I enjoy tackling challenges and creating innovative solutions that have a positive impact.
+    </p>
+        <br>
+    <p>
+      Let's build something great together! Feel free to explore my portfolio and learn more about my work.
+    </p>
   </section>
+</div>
+<!--    &lt;!&ndash; Portfolio Tab &ndash;&gt;-->
+<!--    <div id="portfolio" class="tab-pane">-->
+<!--        <section class="py-5">-->
+<!--            <div class="container">-->
+<!--                <h2 class="text-center">Portfolio</h2>-->
+<!--                &lt;!&ndash; Add your portfolio items, projects, or works here &ndash;&gt;-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </div>-->
 
-  <footer>
-    Built with 💖 by Mariam — <a href="https://github.com/o-mariam" target="_blank">GitHub</a>
-  </footer>
+<!--    &lt;!&ndash; Resume Tab &ndash;&gt;-->
+<!--    <div id="resume" class="tab-pane">-->
+<!--        <section class="py-5">-->
+<!--            <div class="container">-->
+<!--                <h2 class="text-center">Resume</h2>-->
+<!--                &lt;!&ndash; Add your resume content here &ndash;&gt;-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </div>-->
 
+
+<!-- Footer Section -->
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 Dimitris Kontzedakis</p>
+        <!-- Add your contact information, social media links, and any additional content -->
+    </div>
+</footer>
+
+<!-- Add your JavaScript scripts or external libraries here -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
