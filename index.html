@@ -3,103 +3,593 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kleanta Sina  - Portfolio</title>
-
-    <!-- Add your custom CSS styles here -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Add any external CSS libraries or fonts if needed -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Kleanta Sina - Data Science Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
     <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-    }
-
-    section {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      font-size: 18px;
-    }
-  </style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-img-top {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .skill-badge {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid white;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .project-tech {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+    </style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container hero-content">
+            <img src="https://ui-avatars.com/api/?name=Kleanta+Sina&background=random" alt="Kleanta Sina" class="profile-img rounded-circle mb-4 animate__animated animate__fadeIn">
+            <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInDown">Kleanta Sina</h1>
+            <p class="lead fs-4 mb-4 animate__animated animate__fadeInUp">Data Scientist | Machine Learning Engineer</p>
+            <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="https://www.linkedin.com/in/sina" class="btn btn-outline-light btn-lg rounded-pill"><i class="fab fa-linkedin me-2"></i> LinkedIn</a>
+                <a href="https://github.com/o-mariam" class="btn btn-outline-light btn-lg rounded-pill"><i class="fab fa-github me-2"></i> GitHub</a>
+                <a href="#contact" class="btn btn-primary btn-lg rounded-pill"><i class="fas fa-envelope me-2"></i> Contact</a>
+            </div>
+        </div>
+    </section>
 
-
-<!-- Header Section -->
-<header class="jumbotron jumbotron-fluid text-center">
-    <div class="container">
-        <h1 class="display-4">Dimitris Kontzedakis</h1>
-        <p class="lead">Machine Learning Engineer | Data Scientist  | Data Engineer </p>
-        <p>London, UK</p>
-        <p>sinakleanta@gmail.com • +44 7729971360 • <a href="https://www.linkedin.com/in/anta-sina/">LinkedIn</a>
-            • <a href="https://github.com/o-mariam">GitHub</a></p>
-        <!-- Add a brief introduction or tagline -->
-    </div>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html"><u>About me</u></a>
-        <a class="navbar-brand" href="projects.html"><u>Projects</u></a>
-<!--        <a class="navbar-brand" href="cv/CV.html"><u>CV</u></a>-->
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">KS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-</header>
 
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="lead">Aspiring Data Scientist with expertise in machine learning, statistical modeling, and data preprocessing.</p>
+                    <p>I have a strong foundation in probability, linear algebra, and SQL database management. Skilled in Python and adapting quickly to new tools and technologies. Passionate to grow as a data-focused leader driving innovation and solving real-world challenges.</p>
+                    <p>My approach combines technical expertise with a deep understanding of business needs, ensuring that data solutions deliver measurable impact.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary me-2">Get In Touch</a>
+                        <a href="#" class="btn btn-outline-secondary">Download CV</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-4">
+                            <h5 class="card-title mb-4">Technical Skills Overview</h5>
+                            <div class="mb-3">
+                                <h6 class="mb-2">Python</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="mb-2">Machine Learning</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="mb-2">SQL</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="mb-2">Data Visualization</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div>
-    <h2>About</h2>
-    <section>
-    <p>
-      Hi, I'm Dimitris, a passionate engineer with experience in AI and Machine Learning. I've worked as a Data Scientist and Machine Learning Engineer, assisting companies in designing, developing, and productionizing AI solutions. I'm a strong advocate for well-designed code, following best practices, and delivering professional results.
-    </p>
-        <br>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Featured Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Frailty Prediction">
+                        <div class="card-body">
+                            <h5 class="card-title">Frailty Prediction for the Elderly</h5>
+                            <p class="card-text">Conducted research using real-world ECG and accelerometer data to predict frailty in elderly patients.</p>
+                            <p class="project-tech">Python • Random Forest • Signal Processing</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i> Improved data clarity by 25%</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Increased prediction accuracy by 10.96%</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Applied advanced signal processing methods</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Email Spam Detection">
+                        <div class="card-body">
+                            <h5 class="card-title">Email Spam Detection Using Neural Networks</h5>
+                            <p class="card-text">Designed and implemented a deep learning model for spam classification with 96% accuracy.</p>
+                            <p class="project-tech">Python • Keras • NLP</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i> Achieved 96% classification accuracy</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Optimized neural network architecture</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Extensive data preprocessing</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="DHT File Sharing">
+                        <div class="card-body">
+                            <h5 class="card-title">DHT-Based File Sharing System</h5>
+                            <p class="card-text">Implemented a distributed hash table (DHT) using the Chord protocol for efficient data retrieval.</p>
+                            <p class="project-tech">Python • Distributed Systems • Chord Protocol</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i> Efficient data retrieval system</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Evaluated robustness under failure</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Handled real-world geospatial data</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      In my roles, I've focused on simplifying complex AI concepts, ensuring code quality, and fostering a collaborative development environment. I enjoy tackling challenges and creating innovative solutions that have a positive impact.
-    </p>
-        <br>
-    <p>
-      Let's build something great together! Feel free to explore my portfolio and learn more about my work.
-    </p>
-  </section>
-</div>
-<!--    &lt;!&ndash; Portfolio Tab &ndash;&gt;-->
-<!--    <div id="portfolio" class="tab-pane">-->
-<!--        <section class="py-5">-->
-<!--            <div class="container">-->
-<!--                <h2 class="text-center">Portfolio</h2>-->
-<!--                &lt;!&ndash; Add your portfolio items, projects, or works here &ndash;&gt;-->
-<!--            </div>-->
-<!--        </section>-->
-<!--    </div>-->
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Professional Experience</h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title mb-1">Supervisor, Management Team</h5>
+                                <span class="badge bg-primary">Oct 2022 - Present</span>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">The Real Greek | London, UK</h6>
+                            <ul class="card-text">
+                                <li>Led a team in developing Excel-based reporting, creating dashboards and analyzing data to identify trends in staff performance</li>
+                                <li>Developed a Python script to automate weekly rota scheduling, reducing manual effort by 14 hours per week</li>
+                                <li>Minimized scheduling errors through automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title mb-1">Lab Teaching Assistant</h5>
+                                <span class="badge bg-primary">Jan 2020 - Jun 2020</span>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">University of Patras, SQL Lab | Patras, Greece</h6>
+                            <ul class="card-text">
+                                <li>Provided one-on-one SQL support to students during lab sessions</li>
+                                <li>Helped students debug queries and understand complex database concepts</li>
+                                <li>Conducted workshops on advanced SQL concepts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!--    &lt;!&ndash; Resume Tab &ndash;&gt;-->
-<!--    <div id="resume" class="tab-pane">-->
-<!--        <section class="py-5">-->
-<!--            <div class="container">-->
-<!--                <h2 class="text-center">Resume</h2>-->
-<!--                &lt;!&ndash; Add your resume content here &ndash;&gt;-->
-<!--            </div>-->
-<!--        </section>-->
-<!--    </div>-->
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title mb-1">Computer Engineering and Informatics</h5>
+                                <span class="badge bg-primary">Oct 2016 - Apr 2024</span>
+                            </div>
+                            <h6 class="card-subtitle mb-3 text-muted">University of Patras | Patras, Greece</h6>
+                            <p class="card-text">Integrated Master's Degree (MEng) - Grade: 7.1/10 (equivalent to UK Upper Second-Class Honours)</p>
+                            
+                            <h6 class="mt-4">Dissertation: Frailty Prediction for the Elderly</h6>
+                            <ul>
+                                <li>Conducted research as part of the FrailSafe project using real-world ECG and accelerometer data</li>
+                                <li>Applied machine learning techniques (Random Forest) and advanced signal processing methods</li>
+                                <li>Improved data clarity by 25% and increased prediction accuracy by 10.96%</li>
+                            </ul>
+                            
+                            <h6 class="mt-4">Relevant Coursework:</h6>
+                            <div class="d-flex flex-wrap">
+                                <span class="skill-badge">Statistics</span>
+                                <span class="skill-badge">Probability</span>
+                                <span class="skill-badge">Machine Learning</span>
+                                <span class="skill-badge">Signal Processing</span>
+                                <span class="skill-badge">Data Structures</span>
+                                <span class="skill-badge">Algorithms Analysis</span>
+                                <span class="skill-badge">Artificial Intelligence</span>
+                                <span class="skill-badge">Linear Algebra</span>
+                                <span class="skill-badge">Database Management</span>
+                                <span class="skill-badge">Cloud Computing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Programming</h5>
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <span class="skill-badge">Python</span>
+                                <span class="skill-badge">SQL</span>
+                                <span class="skill-badge">Bash</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Data Science</h5>
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <span class="skill-badge">Machine Learning</span>
+                                <span class="skill-badge">Deep Learning</span>
+                                <span class="skill-badge">NLP</span>
+                                <span class="skill-badge">Statistics</span>
+                                <span class="skill-badge">Probability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Tools & Technologies</h5>
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <span class="skill-badge">Scikit-learn</span>
+                                <span class="skill-badge">Keras</span>
+                                <span class="skill-badge">Pandas</span>
+                                <span class="skill-badge">NumPy</span>
+                                <span class="skill-badge">Tableau</span>
+                                <span class="skill-badge">Azure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Footer Section -->
-<footer class="bg-dark text-light text-center py-3">
-    <div class="container">
-        <p>&copy; 2023 Dimitris Kontzedakis</p>
-        <!-- Add your contact information, social media links, and any additional content -->
-    </div>
-</footer>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center section-title text-white">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card bg-transparent border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <h4 class="mb-4">Contact Information</h4>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="fas fa-map-marker-alt contact-icon mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-0">Location</h6>
+                                            <p class="mb-0">London, UK</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="fas fa-envelope contact-icon mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-0">Email</h6>
+                                            <p class="mb-0">sinakleanta@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-3">
+                                        <i class="fas fa-phone contact-icon mt-1"></i>
+                                        <div>
+                                            <h6 class="mb-0">Phone</h6>
+                                            <p class="mb-0">+44 7384987477</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h6 class="mb-3">Connect With Me</h6>
+                                        <div class="social-icons">
+                                            <a href="https://www.linkedin.com/in/sina"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="https://github.com/o-mariam"><i class="fab fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="mb-4">Send Me a Message</h4>
+                                    <form>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control bg-transparent text-white border-secondary" placeholder="Your Name" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control bg-transparent text-white border-secondary" placeholder="Your Email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control bg-transparent text-white border-secondary" placeholder="Subject">
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea class="form-control bg-transparent text-white border-secondary" rows="4" placeholder="Your Message" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Add your JavaScript scripts or external libraries here -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <footer class="py-4 bg-secondary text-white text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 Kleanta Sina. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
