@@ -2,38 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mariam | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background: #f4f4f4;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9fb;
       color: #333;
+      padding: 2rem;
     }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #111;
+    }
+
+    p.subtitle {
+      color: #666;
+      font-size: 1.2rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
     .project {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    a {
-      color: #0366d6;
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .project a {
       text-decoration: none;
+      color: #0070f3;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>Your Name</h1>
-  <p>Welcome to my GitHub portfolio. Here are some of my projects:</p>
 
-  <div class="project">
-    <h2>Project Title</h2>
-    <p>Description of the project and what it does.</p>
-    <a href="https://github.com/yourusername/project-repo">View on GitHub</a>
-  </div>
+  <header>
+    <h1>Mariam</h1>
+    <p class="subtitle">Frontend Developer & Open Source Enthusiast</p>
+  </header>
 
-  <!-- Repeat the above div for each project -->
+  <section class="projects">
+    <div class="project">
+      <h2>My Cool Project</h2>
+      <p>This is a short description of what the project does, built with HTML/CSS/JS.</p>
+      <a href="https://github.com/o-mariam/my-cool-project" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project">
+      <h2>Another App</h2>
+      <p>A powerful tool that solves a specific problem. Uses Node.js and Express.</p>
+      <a href="https://github.com/o-mariam/another-app" target="_blank">View on GitHub →</a>
+    </div>
+
+    <!-- Add more projects here -->
+  </section>
+
+  <footer>
+    Built with 💖 by Mariam — <a href="https://github.com/o-mariam" target="_blank">GitHub</a>
+  </footer>
+
 </body>
 </html>
